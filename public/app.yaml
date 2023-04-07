@@ -1,10 +1,9 @@
-runtime: nodejs16
+runtime: nodejs12
+
 handlers:
-  # Serve all static files with url ending with a file extension
-  - url: /(.*\..+)$
-    static_files: public/index.html
-    upload: public/index.html
-  # Catch all handler to index.html
-  - url: /.*
-    static_files: public/index.html
-    upload: public/index.html
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /.*
+  script: auto
